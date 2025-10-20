@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CommonExtensions\CommonExtensions.csproj" />
     <ProjectReference Include="..\CommonExceptions\CommonExceptions.csproj" />
+    <ProjectReference Include="..\CommonFilters\CommonFilters.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace Shopify.UsersAPI.Exceptions;
+﻿namespace Shopify.CommonExceptions;
 
 public class AuthorizationException : Exception
 {

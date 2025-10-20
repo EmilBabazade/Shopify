@@ -1,25 +1,31 @@
+using Microsoft.AspNetCore.Mvc;
+using Shopify.UsersAPI.Models;
+using Shopify.UsersAPI.RequestBodies;
+using Shopify.UsersAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<UsersService>();
+builder.Services.AddScoped<JWTService>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+// TODO: validation error handling common filter
+var group = app.MapGroup("/users");
+group.MapPost("/register", async (
+    [FromBody] UserRequestBody userRequestBody,
+    UsersService usersService,
+    HttpContext httpContext,
+    CancellationToken cancellationToken
+) => usersService.CreateUser(userRequestBody, cancellationToken));
 
 app.Run();

@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace Shopify.UsersAPI.Exceptions;
+﻿namespace Shopify.CommonExceptions;
 
 public class BadRequestException : Exception
 {

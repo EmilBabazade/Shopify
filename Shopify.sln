@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonExceptions", "CommonE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFilters", "CommonFilters\CommonFilters.csproj", "{6B30E286-A862-C78D-EC3F-46E3A022FA49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.AppHost", "Shopify.AppHost\Shopify.AppHost.csproj", "{A7CAD1DE-FD41-4AA2-8D57-51E7998BFC4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.ServiceDefaults", "Shopify.ServiceDefaults\Shopify.ServiceDefaults.csproj", "{63A77AA1-D025-8EC2-4BE2-34F27FDD8EBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{6B30E286-A862-C78D-EC3F-46E3A022FA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B30E286-A862-C78D-EC3F-46E3A022FA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B30E286-A862-C78D-EC3F-46E3A022FA49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CAD1DE-FD41-4AA2-8D57-51E7998BFC4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CAD1DE-FD41-4AA2-8D57-51E7998BFC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CAD1DE-FD41-4AA2-8D57-51E7998BFC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CAD1DE-FD41-4AA2-8D57-51E7998BFC4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A77AA1-D025-8EC2-4BE2-34F27FDD8EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A77AA1-D025-8EC2-4BE2-34F27FDD8EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A77AA1-D025-8EC2-4BE2-34F27FDD8EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A77AA1-D025-8EC2-4BE2-34F27FDD8EBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

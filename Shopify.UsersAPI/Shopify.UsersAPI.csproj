@@ -16,6 +16,7 @@
     <ProjectReference Include="..\CommonExtensions\CommonExtensions.csproj" />
     <ProjectReference Include="..\CommonExceptions\CommonExceptions.csproj" />
     <ProjectReference Include="..\CommonFilters\CommonFilters.csproj" />
+    <ProjectReference Include="..\Shopify.ServiceDefaults\Shopify.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

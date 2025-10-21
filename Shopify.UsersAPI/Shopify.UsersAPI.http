@@ -1,6 +1,26 @@
-@Shopify.UsersAPI_HostAddress = http://localhost:5017
+@Shopify.UsersAPI_HostAddress = https://localhost:7206
 
 GET {{Shopify.UsersAPI_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+POST {{Shopify.UsersAPI_HostAddress}}/users/login
+Content-Type: application/json
+
+{
+  "email": "ab@ad.dfd",
+  "password": "1234@qwer"
+}
+
+###
+
+POST {{Shopify.UsersAPI_HostAddress}}/users/register
+Content-Type: application/json
+
+{
+  "email": "ab@ad.dfd",
+  "password": "1234@qwer"
+}
 
 ###

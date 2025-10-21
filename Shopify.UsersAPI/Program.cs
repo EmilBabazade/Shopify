@@ -9,6 +9,8 @@ using System.Threading;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -18,6 +20,8 @@ builder.Services.AddSingleton<UsersService>();
 builder.Services.AddSingleton<JWTService>();
 
 var app = builder.Build();
+
+app.MapDefaultEndpoints();
 
 if (app.Environment.IsDevelopment())
 {

@@ -15,11 +15,11 @@ public class UsersService(JWTService jWTService)
             _users.Any(x => x.Email.Equals(userRequest.Email, StringComparison.InvariantCultureIgnoreCase))
             )
         {
-            throw new BadHttpRequestException("User already exists");
+            throw new BadRequestException("User already exists");
         }
         
         var (hash, salt) = PasswordHasherService.HashPassword(userRequest.Password);
-        var newUser = new User(Guid.NewGuid(), userRequest.Password, hash, salt);
+        var newUser = new User(Guid.NewGuid(), userRequest.Email, hash, salt);
         _users.Add(newUser);
         var jwt = _jWTService.GenerateToken(newUser.Id);
         return new UserDTO(newUser.Id, newUser.Email, newUser.CreatedAt, jwt);
@@ -30,11 +30,11 @@ public class UsersService(JWTService jWTService)
         var user = _users.FirstOrDefault(x => x.Email.Equals(userRequest.Email, StringComparison.InvariantCultureIgnoreCase));
         if(user == null)
         {
-            throw new AuthorizationException();
+            throw new NotFoundException();
         }
         if (!PasswordHasherService.VerifyPassword(userRequest.Password, user.PasswordHash, user.Salt))
         {
-            throw new AuthorizationException();
+            throw new AuthException();
         }
 
         return new UserDTO(user, _jWTService.GenerateToken(user.Id));

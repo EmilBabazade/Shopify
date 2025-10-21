@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopify.UsersAPI", "Shopify.UsersAPI\Shopify.UsersAPI.csproj", "{AD07E236-1098-4F5E-BA07-3554586B8308}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonExtensions", "CommonExtensions\CommonExtensions.csproj", "{0AE0690D-9CEF-4497-932E-335F7E9151AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonExceptions", "CommonExceptions\CommonExceptions.csproj", "{8EBE834C-125E-38FF-E27A-6BCFA6CD933F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFilters", "CommonFilters\CommonFilters.csproj", "{6B30E286-A862-C78D-EC3F-46E3A022FA49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{0AE0690D-9CEF-4497-932E-335F7E9151AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AE0690D-9CEF-4497-932E-335F7E9151AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AE0690D-9CEF-4497-932E-335F7E9151AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EBE834C-125E-38FF-E27A-6BCFA6CD933F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBE834C-125E-38FF-E27A-6BCFA6CD933F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBE834C-125E-38FF-E27A-6BCFA6CD933F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBE834C-125E-38FF-E27A-6BCFA6CD933F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B30E286-A862-C78D-EC3F-46E3A022FA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B30E286-A862-C78D-EC3F-46E3A022FA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B30E286-A862-C78D-EC3F-46E3A022FA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B30E286-A862-C78D-EC3F-46E3A022FA49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

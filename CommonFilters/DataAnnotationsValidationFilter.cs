@@ -1,18 +1,22 @@
-namespace Shopify.CommonFilters;
+using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
-public sealed class DataAnnotationsValidationFilter<T> : IEndPointFilter<T> where T : class
+namespace CommonFilters;
+
+public sealed class DataAnnotationsValidationFilter<T> : IEndpointFilter where T : class
 {
-    public async ValueTask<object> InvokeAsync(
-        EndpointFilterInvocationContext c, EndpointFilterDelegate next)
+    public async ValueTask<object?> InvokeAsync(
+        EndpointFilterInvocationContext context, EndpointFilterDelegate next)
     {
-        var model = c.Arguments.OfType<T>().FirstOrDefault();
-        if (model is null) return Results.BadRequest("Invalid body.");
+        var model = context.Arguments.OfType<T>().FirstOrDefault();
+        if (model is null)
+            return Results.BadRequest("Invalid body.");
 
         var results = new List<ValidationResult>();
-        var ctx = new ValidationContext(model);
-        var ok = Validator.TryValidateObject(model, ctx, results, true);
+        var validationContext = new ValidationContext(model);
+        var isValid = Validator.TryValidateObject(model, validationContext, results, true);
 
-        if (!ok)
+        if (!isValid)
         {
             var errors = results
                 .GroupBy(r => r.MemberNames.FirstOrDefault() ?? string.Empty)
@@ -21,7 +25,6 @@ public sealed class DataAnnotationsValidationFilter<T> : IEndPointFilter<T> wher
             return Results.ValidationProblem(errors);
         }
 
-        return await next(c);
+        return await next(context);
     }
-
 }
